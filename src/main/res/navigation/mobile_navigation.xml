@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home_fragment">
+
+    <fragment
+        android:id="@+id/nav_home_fragment"
+        android:name="com.example.weatherapp.home.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/nav_contactus"
+        android:name="com.example.weatherapp.ui.ContactUs"
+        android:label="Contact us"
+        tools:layout="@layout/contactus_fragment" />
+    <fragment
+        android:id="@+id/nav_info5"
+        android:name="com.example.weatherapp.cityInfo.CityFiveDaysFragment"
+        android:label="cityInfo5"
+        tools:layout="@layout/city_details5" >
+        <action
+            android:id="@+id/action_nav_info5_to_nav_info16"
+            app:destination="@id/nav_info16" />
+        <action
+            android:id="@+id/action_nav_info5_to_nav_cityDetails"
+            app:destination="@id/nav_cityDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_info16"
+        android:name="com.example.weatherapp.cityInfo.CitySixteenDaysFragment"
+        android:label="cityInfo16"
+        tools:layout="@layout/city_details16" />
+    <fragment
+        android:id="@+id/nav_cityDetails"
+        android:name="com.example.weatherapp.cityInfo.CitySixteenDaysFragment"
+        android:label="cityInfo16"
+        tools:layout="@layout/city_details16" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.weatherapp.ui.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/search_fragment">
+        <action
+            android:id="@+id/search_city_action"
+            app:destination="@id/nav_info5" />
+    </fragment>
+</navigation>
